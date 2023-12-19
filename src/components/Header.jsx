@@ -1,3 +1,5 @@
+import MenuSider from "./Menu";
+import Dashboard from "./Dashboard";
 import React from "react";
 import { Layout, Row, Col } from "antd";
 import TableInfo from "../components/Table";
@@ -25,9 +27,6 @@ const footerStyle = {
 };
 const layoutStyle = {
   borderRadius: 8,
-  // overflow: "hidden",
-  // width: "calc(50% - 8px)",
-  // maxWidth: "calc(50% - 8px)",
 };
 
 const tableStyle = {
@@ -37,7 +36,8 @@ const Container = () => {
   return (
     <Layout style={layoutStyle}>
       <Sider width="306px" height="1198px" style={siderStyle}>
-        Sider
+        <Dashboard />
+        <MenuSider />
       </Sider>
       <Layout>
         <Header style={headerStyle}>Header</Header>
