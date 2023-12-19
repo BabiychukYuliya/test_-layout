@@ -1,5 +1,21 @@
 import { Table } from "antd";
 
+const activeStyle = {
+  color: "#008767",
+  borderRadius: 4,
+  border: "1px solid",
+  borderColor: "#00B087",
+  backgroundColor: "rgba(22, 192, 152, 0.38)",
+};
+
+const inactiveStyle = {
+  color: "#DF0404",
+  borderRadius: 4,
+  border: "1px solid",
+  borderColor: "#DF0404",
+  backgroundColor: "#FFC5C5",
+};
+
 const columns = [
   {
     title: "Customer Name",
@@ -30,6 +46,14 @@ const columns = [
     title: "Status",
     dataIndex: "Status",
     key: "Status",
+    render: (text) => {
+      if (text === "Active") {
+        return <span style={activeStyle}>{text}</span>;
+      } else if (text === "Inactive") {
+        return <span style={inactiveStyle}>{text}</span>;
+      }
+      return text;
+    },
   },
 ];
 
@@ -109,6 +133,8 @@ const data = [
   },
 ];
 const TableInfo = () => {
-  return <Table dataSource={data} columns={columns} />;
+  return (
+    <Table dataSource={data} columns={columns} pagination={{ pageSize: "8" }} />
+  );
 };
 export default TableInfo;

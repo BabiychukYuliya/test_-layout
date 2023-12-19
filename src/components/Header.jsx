@@ -1,6 +1,8 @@
 import React from "react";
-import { Layout, Flex } from "antd";
-const { Header, Footer, Sider, Content } = Layout;
+import { Layout, Row, Col } from "antd";
+import TableInfo from "../components/Table";
+const { Header, Footer, Sider } = Layout;
+
 const headerStyle = {
   textAlign: "center",
   color: "#fff",
@@ -9,13 +11,7 @@ const headerStyle = {
   lineHeight: "64px",
   backgroundColor: "#4096ff",
 };
-const contentStyle = {
-  textAlign: "center",
-  minHeight: 120,
-  lineHeight: "120px",
-  color: "#fff",
-  backgroundColor: "#0958d9",
-};
+
 const siderStyle = {
   textAlign: "center",
   lineHeight: "120px",
@@ -29,24 +25,31 @@ const footerStyle = {
 };
 const layoutStyle = {
   borderRadius: 8,
-  overflow: "hidden",
-  width: "calc(50% - 8px)",
-  maxWidth: "calc(50% - 8px)",
+  // overflow: "hidden",
+  // width: "calc(50% - 8px)",
+  // maxWidth: "calc(50% - 8px)",
 };
 
+const tableStyle = {
+  width: "968px",
+};
 const Container = () => {
-  <Flex gap="middle" wrap="wrap">
+  return (
     <Layout style={layoutStyle}>
-      <Sider width="25%" style={siderStyle}>
+      <Sider width="306px" height="1198px" style={siderStyle}>
         Sider
       </Sider>
       <Layout>
         <Header style={headerStyle}>Header</Header>
-        <Content style={contentStyle}>Content</Content>
+        <Row height="69px">
+          <Col>
+            <TableInfo style={tableStyle} />
+          </Col>
+        </Row>
         <Footer style={footerStyle}>Footer</Footer>
       </Layout>
     </Layout>
-  </Flex>;
+  );
 };
 
 export default Container;
