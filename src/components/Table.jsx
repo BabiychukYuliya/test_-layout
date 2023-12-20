@@ -1,4 +1,5 @@
-import { Table } from "antd";
+import { Input, Table } from "antd";
+import { useState } from "react";
 
 const activeStyle = {
   color: "#008767",
@@ -16,46 +17,47 @@ const inactiveStyle = {
   backgroundColor: "#FFC5C5",
 };
 
-const columns = [
-  {
-    title: "Customer Name",
-    dataIndex: "Customer Name",
-    key: "Customer_Name",
-  },
-  {
-    title: "Company",
-    dataIndex: "Company",
-    key: "Company",
-  },
-  {
-    title: "Phone Number",
-    dataIndex: "Phone Number",
-    key: "Phone_Number",
-  },
-  {
-    title: "Email",
-    dataIndex: "Email",
-    key: "Email",
-  },
-  {
-    title: "Country",
-    dataIndex: "Country",
-    key: "Country",
-  },
-  {
-    title: "Status",
-    dataIndex: "Status",
-    key: "Status",
-    render: (text) => {
-      if (text === "Active") {
-        return <span style={activeStyle}>{text}</span>;
-      } else if (text === "Inactive") {
-        return <span style={inactiveStyle}>{text}</span>;
-      }
-      return text;
-    },
-  },
-];
+// const columns = [
+//   {
+//     title: "Customer Name",
+//     dataIndex: "Customer Name",
+//     key: "Customer_Name",
+//   },
+//   {
+//     title: "Company",
+//     dataIndex: "Company",
+//     key: "Company",
+//   },
+//   {
+//     title: "Phone Number",
+//     dataIndex: "Phone Number",
+//     key: "Phone_Number",
+//   },
+//   {
+//     title: "Email",
+//     dataIndex: "Email",
+//     key: "Email",
+//   },
+//   {
+//     title: "Country",
+//     dataIndex: "Country",
+//     key: "Country",
+//   },
+//   {
+//     title: "Status",
+//     dataIndex: "Status",
+//     key: "Status",
+//     render: (text) => {
+//       if (text === "Active") {
+//         return <span style={activeStyle}>{text}</span>;
+//       } else if (text === "Inactive") {
+//         return <span style={inactiveStyle}>{text}</span>;
+//       }
+//       return text;
+//     },
+//     filtredValue: [searchedText],
+//   },
+// ];
 
 const data = [
   {
@@ -133,8 +135,66 @@ const data = [
   },
 ];
 const TableInfo = () => {
+  const [searchedText, setSearchedText] = useState("");
   return (
-    <Table dataSource={data} columns={columns} pagination={{ pageSize: "8" }} />
+    <>
+      <Input.Search
+        placeholder="Search here..."
+        onSearch={(value) => setSearchedText(value)}
+      />
+      <Table
+        dataSource={data}
+        columns={[
+          {
+            title: "Customer Name",
+            dataIndex: "Customer Name",
+            key: "Customer_Name",
+          },
+          {
+            title: "Company",
+            dataIndex: "Company",
+            key: "Company",
+            filtredValue: [searchedText],
+            onFilter: (value, record) => {
+              return String(record.Company).toLowerCase().includes(value);
+            },
+          },
+          {
+            title: "Phone Number",
+            dataIndex: "Phone Number",
+            key: "Phone_Number",
+          },
+          {
+            title: "Email",
+            dataIndex: "Email",
+            key: "Email",
+          },
+          {
+            title: "Country",
+            dataIndex: "Country",
+            key: "Country",
+          },
+          {
+            title: "Status",
+            dataIndex: "Status",
+            key: "Status",
+            render: (text) => {
+              if (text === "Active") {
+                return <span style={activeStyle}>{text}</span>;
+              } else if (text === "Inactive") {
+                return <span style={inactiveStyle}>{text}</span>;
+              }
+              return text;
+            },
+            filtredValue: [searchedText],
+            onFilter: (value, record) => {
+              return String(record.Status).toLowerCase().includes(value);
+            },
+          },
+        ]}
+        pagination={{ pageSize: "8" }}
+      />
+    </>
   );
 };
 export default TableInfo;

@@ -3,22 +3,10 @@ import Dashboard from "./Dashboard";
 import React from "react";
 import { Layout, Row, Col } from "antd";
 import TableInfo from "../components/Table";
-const { Header, Footer, Sider } = Layout;
-
-const headerStyle = {
-  textAlign: "center",
-  color: "#fff",
-  height: 64,
-  paddingInline: 48,
-  lineHeight: "64px",
-  backgroundColor: "#4096ff",
-};
+const { Footer, Sider } = Layout;
 
 const siderStyle = {
-  textAlign: "center",
-  lineHeight: "120px",
-  color: "#fff",
-  backgroundColor: "#1677ff",
+  backgroundColor: "#FFFFFF",
 };
 const footerStyle = {
   textAlign: "center",
@@ -26,7 +14,7 @@ const footerStyle = {
   backgroundColor: "#4096ff",
 };
 const layoutStyle = {
-  borderRadius: 8,
+  backgroundColor: "#FFFFFF",
 };
 
 const tableStyle = {
@@ -40,7 +28,6 @@ const Container = () => {
         <MenuSider />
       </Sider>
       <Layout>
-        <Header style={headerStyle}>Header</Header>
         <Row height="69px">
           <Col>
             <TableInfo style={tableStyle} />
