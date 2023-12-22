@@ -1,5 +1,5 @@
-import { React } from "react";
-import { Menu } from "antd";
+import { React, useState } from "react";
+import { Drawer, Menu } from "antd";
 import { ReactComponent as KEY_SQUARE } from "../assets/images/KEY_SQUARE.svg";
 import { ReactComponent as THREED_SQUARE } from "../assets/images/THREED_SQUARE.svg";
 import { ReactComponent as USER_SQUARE } from "../assets/images/USER_SQUARE.svg";
@@ -7,6 +7,7 @@ import { ReactComponent as WALLET } from "../assets/images/WALLET.svg";
 import { ReactComponent as DISCOUNT } from "../assets/images/DISCOUNT.svg";
 import { ReactComponent as MESSAGE } from "../assets/images/MESSAGE.svg";
 import TableInfo from "./Table";
+import { MenuOutlined } from "@ant-design/icons";
 // import { ReactComponent as CHEVRON } from "../assets/images/CHEVRON.svg";
 
 // const MenuSider = () => {
@@ -63,21 +64,45 @@ const items = [
   ]),
 ];
 
-const onClick = (e) => {
-  console.log("click", e);
-};
-
 const MenuSider = () => {
+  const [openMenu, setOpenMenu] = useState(false);
   return (
-    <Menu
-      onClick={onClick}
+    <div
       style={{
-        width: 306,
+        backgroundColor: "#FFF",
+        boxShadow: "0px 10px 60px 0px rgba(226, 236, 249, 0.50)",
       }}
-      mode="vertical"
-      items={items}
-    />
+    >
+      <div
+        className="menuIcon"
+        style={{
+          paddingTop: 20,
+          paddingLeft: 15,
+        }}
+      >
+        <MenuOutlined
+          style={{ fontSize: 50 }}
+          onClick={() => setOpenMenu(true)}
+        />
+      </div>
+      <span className="headerMenu">
+        <AppMenu />
+      </span>
+      <Drawer
+        placement="left"
+        open={openMenu}
+        closable={false}
+        onClose={() => {
+          setOpenMenu(false);
+        }}
+      >
+        <AppMenu />
+      </Drawer>
+    </div>
   );
 };
 
+const AppMenu = () => {
+  return <Menu mode="vertical" items={items} />;
+};
 export default MenuSider;

@@ -1,5 +1,6 @@
 import { Input, Table } from "antd";
-import { useState } from "react";
+
+// import { useState } from "react";
 
 const activeStyle = {
   color: "#008767",
@@ -135,13 +136,10 @@ const data = [
   },
 ];
 const TableInfo = () => {
-  const [searchedText, setSearchedText] = useState("");
+  // const [searchedText, setSearchedText] = useState("");
   return (
     <>
-      <Input.Search
-        placeholder="Search here..."
-        onSearch={(value) => setSearchedText(value)}
-      />
+      <Input.Search placeholder="Search here..." />
       <Table
         dataSource={data}
         columns={[
@@ -154,9 +152,9 @@ const TableInfo = () => {
             title: "Company",
             dataIndex: "Company",
             key: "Company",
-            filtredValue: [searchedText],
-            onFilter: (value, record) => {
-              return String(record.Company).toLowerCase().includes(value);
+            filtredValue: ["Google"],
+            onFilter: (value, item) => {
+              return item.Company.includes(value);
             },
           },
           {
@@ -186,13 +184,12 @@ const TableInfo = () => {
               }
               return text;
             },
-            filtredValue: [searchedText],
-            onFilter: (value, record) => {
-              return String(record.Status).toLowerCase().includes(value);
-            },
           },
         ]}
-        pagination={{ pageSize: "8" }}
+        pagination={{
+          pageSize: "8",
+          total: "256000",
+        }}
       />
     </>
   );

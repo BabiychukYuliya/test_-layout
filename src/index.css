@@ -3,11 +3,10 @@
 }
 
 @font-face {
-  font-family: "Poppins";
-  src: url("/public/fonts/Poppins-Regular.ttf") format("ttf"),
-    url("/public/fonts/Poppins-Medium.ttf") format("ttf");
-  font-weight: normal;
-  font-style: normal;
+  font-family: "PoppinsRegular";
+  src: local("PoppinsRegular"),
+    url("./assets/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weigh: normal;
 }
 
 body {
@@ -20,4 +19,16 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+@media (max-width: 500px) {
+  .headerMenu {
+    display: none;
+  }
+}
+
+@media (min-width: 500px) {
+  .menuIcon {
+    display: none;
+  }
 }

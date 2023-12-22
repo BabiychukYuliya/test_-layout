@@ -1,5 +1,6 @@
 import MenuSider from "./Menu";
 import Dashboard from "./Dashboard";
+import Evano from "./Evano";
 import React from "react";
 import { Layout, Row, Col } from "antd";
 import TableInfo from "../components/Table";
@@ -7,6 +8,8 @@ const { Footer, Sider } = Layout;
 
 const siderStyle = {
   backgroundColor: "#FFFFFF",
+  left: 28,
+  top: 36,
 };
 const footerStyle = {
   textAlign: "center",
@@ -26,6 +29,7 @@ const Container = () => {
       <Sider width="306px" height="1198px" style={siderStyle}>
         <Dashboard />
         <MenuSider />
+        <Evano />
       </Sider>
       <Layout>
         <Row height="69px">
