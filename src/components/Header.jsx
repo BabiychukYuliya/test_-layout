@@ -17,7 +17,7 @@ const layoutStyle = {
 };
 
 const tableStyle = {
-  width: "968px",
+  width: "100%",
 };
 const Container = () => {
   return (
