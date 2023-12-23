@@ -4,18 +4,14 @@ import Evano from "./Evano";
 import React from "react";
 import { Layout, Row, Col } from "antd";
 import TableInfo from "../components/Table";
-const { Footer, Sider } = Layout;
+const { Sider } = Layout;
 
 const siderStyle = {
   backgroundColor: "#FFFFFF",
   left: 28,
   top: 36,
 };
-const footerStyle = {
-  textAlign: "center",
-  color: "#fff",
-  backgroundColor: "#4096ff",
-};
+
 const layoutStyle = {
   backgroundColor: "#FFFFFF",
 };
@@ -29,7 +25,9 @@ const Container = () => {
       <Sider width="306px" height="1198px" style={siderStyle}>
         <Dashboard />
         <MenuSider />
-        <Evano />
+        <div style={{ position: "absolute", bottom: "78px", width: "100%" }}>
+          <Evano />
+        </div>
       </Sider>
       <Layout>
         <Row height="69px">
@@ -37,7 +35,6 @@ const Container = () => {
             <TableInfo style={tableStyle} />
           </Col>
         </Row>
-        <Footer style={footerStyle}>Footer</Footer>
       </Layout>
     </Layout>
   );

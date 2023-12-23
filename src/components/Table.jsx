@@ -1,6 +1,6 @@
 import { Input, Table } from "antd";
 
-// import { useState } from "react";
+import { useState } from "react";
 
 const activeStyle = {
   color: "#008767",
@@ -17,48 +17,6 @@ const inactiveStyle = {
   borderColor: "#DF0404",
   backgroundColor: "#FFC5C5",
 };
-
-// const columns = [
-//   {
-//     title: "Customer Name",
-//     dataIndex: "Customer Name",
-//     key: "Customer_Name",
-//   },
-//   {
-//     title: "Company",
-//     dataIndex: "Company",
-//     key: "Company",
-//   },
-//   {
-//     title: "Phone Number",
-//     dataIndex: "Phone Number",
-//     key: "Phone_Number",
-//   },
-//   {
-//     title: "Email",
-//     dataIndex: "Email",
-//     key: "Email",
-//   },
-//   {
-//     title: "Country",
-//     dataIndex: "Country",
-//     key: "Country",
-//   },
-//   {
-//     title: "Status",
-//     dataIndex: "Status",
-//     key: "Status",
-//     render: (text) => {
-//       if (text === "Active") {
-//         return <span style={activeStyle}>{text}</span>;
-//       } else if (text === "Inactive") {
-//         return <span style={inactiveStyle}>{text}</span>;
-//       }
-//       return text;
-//     },
-//     filtredValue: [searchedText],
-//   },
-// ];
 
 const data = [
   {
@@ -136,12 +94,28 @@ const data = [
   },
 ];
 const TableInfo = () => {
-  // const [searchedText, setSearchedText] = useState("");
+  const [searchedText, setSearchedText] = useState("");
+
+  // const handleSearch = (selectedKeys, confirm, dataIndex) => {
+  //   confirm(); // Підтверджуємо вибір
+  //   setSearchedText(selectedKeys[0]); // Зберігаємо заданий пошуковий текст
+  // };
+
+  // const handleReset = (clearFilters) => {
+  //   clearFilters(); // Скидаємо фільтр
+  //   setSearchedText(""); // Очищаємо пошуковий текст
+  // };
+
   return (
     <>
-      <Input.Search placeholder="Search here..." />
+      <Input.Search
+        placeholder="Search here..."
+        onSearch={(value) => setSearchedText(value)}
+      />
       <Table
-        dataSource={data}
+        dataSource={data.filter((item) =>
+          item.Status.toLowerCase().includes(searchedText.toLowerCase())
+        )}
         columns={[
           {
             title: "Customer Name",
@@ -152,10 +126,6 @@ const TableInfo = () => {
             title: "Company",
             dataIndex: "Company",
             key: "Company",
-            filtredValue: ["Google"],
-            onFilter: (value, item) => {
-              return item.Company.includes(value);
-            },
           },
           {
             title: "Phone Number",
@@ -176,6 +146,11 @@ const TableInfo = () => {
             title: "Status",
             dataIndex: "Status",
             key: "Status",
+            filters: [
+              { text: "Active", value: "Active" },
+              { text: "Inactive", value: "Inactive" },
+            ],
+            onFilter: (value, record) => record.Status.includes(value),
             render: (text) => {
               if (text === "Active") {
                 return <span style={activeStyle}>{text}</span>;
@@ -188,7 +163,6 @@ const TableInfo = () => {
         ]}
         pagination={{
           pageSize: "8",
-          total: "256000",
         }}
       />
     </>

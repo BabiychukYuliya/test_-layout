@@ -7,6 +7,9 @@
   src: local("PoppinsRegular"),
     url("./assets/fonts/Poppins-Regular.ttf") format("truetype");
   font-weigh: normal;
+  src: local("PoppinsMedium"),
+    url("./assets/fonts/Poppins-Medium.ttf") format("truetype");
+  font-weigh: normal;
 }
 
 body {
