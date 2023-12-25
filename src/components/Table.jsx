@@ -96,16 +96,6 @@ const data = [
 const TableInfo = () => {
   const [searchedText, setSearchedText] = useState("");
 
-  // const handleSearch = (selectedKeys, confirm, dataIndex) => {
-  //   confirm(); // Підтверджуємо вибір
-  //   setSearchedText(selectedKeys[0]); // Зберігаємо заданий пошуковий текст
-  // };
-
-  // const handleReset = (clearFilters) => {
-  //   clearFilters(); // Скидаємо фільтр
-  //   setSearchedText(""); // Очищаємо пошуковий текст
-  // };
-
   return (
     <>
       <Input.Search
@@ -113,8 +103,16 @@ const TableInfo = () => {
         onSearch={(value) => setSearchedText(value)}
       />
       <Table
-        dataSource={data.filter((item) =>
-          item.Status.toLowerCase().includes(searchedText.toLowerCase())
+        dataSource={data.filter(
+          (item) =>
+            (searchedText === "" ||
+              item.Status.toLowerCase().includes(searchedText.toLowerCase())) &&
+            (searchedText.toLowerCase() === "active"
+              ? item.Status.toLowerCase() === "active"
+              : true) &&
+            (searchedText.toLowerCase() === "inactive"
+              ? item.Status.toLowerCase() === "inactive"
+              : true)
         )}
         columns={[
           {
@@ -150,7 +148,7 @@ const TableInfo = () => {
               { text: "Active", value: "Active" },
               { text: "Inactive", value: "Inactive" },
             ],
-            onFilter: (value, record) => record.Status === value,
+            onFilter: (value, record) => record.Status.includes(value),
             render: (text) => {
               if (text === "Active") {
                 return <span style={activeStyle}>{text}</span>;

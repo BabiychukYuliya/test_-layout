@@ -8,25 +8,7 @@ import { ReactComponent as DISCOUNT } from "../assets/images/DISCOUNT.svg";
 import { ReactComponent as MESSAGE } from "../assets/images/MESSAGE.svg";
 import TableInfo from "./Table";
 import { MenuOutlined } from "@ant-design/icons";
-// import { ReactComponent as CHEVRON } from "../assets/images/CHEVRON.svg";
 
-// const MenuSider = () => {
-//   return (
-//     <div>
-//       <Menu
-//         items={[
-//           { icon: <KEY_SQUARE />, label: "Dashboard" },
-//           { icon: <THREED_SQUARE />, label: "Product" },
-//           { icon: <USER_SQUARE />, label: "Customers" },
-//           { icon: <WALLET />, label: "Income" },
-//           { icon: <DISCOUNT />, label: "Promote" },
-//           { icon: <MESSAGE />, label: "Help" },
-//         ]}
-//       ></Menu>
-//     </div>
-//   );
-// };
-// export default MenuSider;
 function getItem(label, key, icon, children, type) {
   return {
     key,
