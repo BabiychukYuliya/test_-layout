@@ -22,28 +22,49 @@ function getItem(label, key, icon, children, type) {
 const items = [
   getItem("Dashboard", "sub1", <KEY_SQUARE />),
 
-  getItem("Product", "sub2", <THREED_SQUARE />, [
-    getItem("Option product 1", "5"),
-    getItem("Option product 2", "6"),
-  ]),
+  getItem(
+    "Product",
+    "sub2",
+    <THREED_SQUARE />,
+    [getItem("Option product 1", "5"), getItem("Option product 2", "6")],
+    "custom_class"
+  ),
 
-  getItem("Customers", "sub3", <USER_SQUARE />, [getItem(<TableInfo />, "14")]),
+  getItem(
+    "Customers",
+    "sub3",
+    <USER_SQUARE />,
+    [getItem(<TableInfo />, "14")],
+    "custom_class"
+  ),
 
-  getItem("Income", "sub4", <WALLET />, [
-    getItem("Option income 1", "7"),
-    getItem("Option income 2", "8"),
-    getItem("Option income 3", "9"),
-  ]),
+  getItem(
+    "Income",
+    "sub4",
+    <WALLET />,
+    [
+      getItem("Option income 1", "7"),
+      getItem("Option income 2", "8"),
+      getItem("Option income 3", "9"),
+    ],
+    "custom_class"
+  ),
 
-  getItem("Promote", "sub5", <DISCOUNT />, [
-    getItem("Option promote 1", "10"),
-    getItem("Option promote 2", "11"),
-  ]),
+  getItem(
+    "Promote",
+    "sub5",
+    <DISCOUNT />,
+    [getItem("Option promote 1", "10"), getItem("Option promote 2", "11")],
+    "custom_class"
+  ),
 
-  getItem("Help", "sub6", <MESSAGE />, [
-    getItem("Option help 1", "12"),
-    getItem("Option help 2", "13"),
-  ]),
+  getItem(
+    "Help",
+    "sub6",
+    <MESSAGE />,
+    [getItem("Option help 1", "12"), getItem("Option help 2", "13")],
+    "custom_class"
+  ),
 ];
 
 const MenuSider = () => {

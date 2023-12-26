@@ -1,5 +1,7 @@
 :root {
-  --primary-hover-color: #5932ea;
+  --primary-color: #9197b3;
+  --background-hover-color: #5932ea;
+  --text-hover-color: #fff;
 }
 
 @font-face {
@@ -20,8 +22,29 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: "Poppins", sans-serif;
+}
+
+.ant-menu > .ant-menu-item {
+  font-size: 14px;
+  color: #9197b3;
+  font-family: "Poppins";
+  letter-spacing: -0.14px;
+}
+
+.ant-menu > .ant-menu-item:hover,
+.ant-menu > .ant-menu-submenu:hover,
+.ant-menu > .ant-menu-item-active,
+.ant-menu > .ant-menu-submenu-active,
+.ant-menu > .ant-menu-item-open,
+.ant-menu > .ant-menu-submenu-open,
+.ant-menu > .ant-menu-item-selected,
+.ant-menu > .ant-menu-submenu-selected {
+  color: var(--text-hover-color);
+  background-color: var(--background-hover-color);
+  stroke: var(--text-hover-color);
+  fill: var(--text-hover-color);
+  width: 250px;
 }
 
 @media (max-width: 500px) {
