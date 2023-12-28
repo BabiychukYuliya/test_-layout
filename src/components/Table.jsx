@@ -8,6 +8,11 @@ const activeStyle = {
   border: "1px solid",
   borderColor: "#00B087",
   backgroundColor: "rgba(22, 192, 152, 0.38)",
+  display: "inline-flex",
+  justifyContent: "center",
+  alignItems: "center",
+  padding: "4 12",
+  width: 84,
 };
 
 const inactiveStyle = {
@@ -16,6 +21,11 @@ const inactiveStyle = {
   border: "1px solid",
   borderColor: "#DF0404",
   backgroundColor: "#FFC5C5",
+  display: "inline-flex",
+  justifyContent: "center",
+  alignItems: "center",
+  padding: "4 12",
+  width: 84,
 };
 
 const data = [

@@ -34,6 +34,7 @@ code {
 
 .ant-menu > .ant-menu-submenu-vertical {
   width: 250px;
+  color: var(--primary-color);
 }
 
 .ant-menu > .ant-menu-item:hover,
@@ -54,6 +55,8 @@ code {
 @media (max-width: 500px) {
   .headerMenu {
     display: none;
+    align-content: center;
+    justify-content: center;
   }
 }
 
