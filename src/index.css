@@ -32,6 +32,10 @@ code {
   letter-spacing: -0.14px;
 }
 
+.ant-menu > .ant-menu-submenu-vertical {
+  width: 250px;
+}
+
 .ant-menu > .ant-menu-item:hover,
 .ant-menu > .ant-menu-submenu:hover,
 .ant-menu > .ant-menu-item-active,

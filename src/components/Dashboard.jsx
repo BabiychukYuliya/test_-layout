@@ -6,6 +6,7 @@ const DashboardStyle = {
   alignItems: "center",
   gap: 8,
   backgroundColor: "#FFF",
+  marginBottom: 65,
 };
 
 const CardStyle = {
