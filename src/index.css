@@ -4,7 +4,7 @@
   --text-hover-color: #fff;
 }
 
-@font-face {
+/* @font-face {
   font-family: "PoppinsRegular";
   src: local("PoppinsRegular"),
     url("./assets/fonts/Poppins-Regular.ttf") format("truetype");
@@ -12,11 +12,36 @@
   src: local("PoppinsMedium"),
     url("./assets/fonts/Poppins-Medium.ttf") format("truetype");
   font-weigh: normal;
+} */
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-Regular.ttf");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-Medium.ttf");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-SemiBold.ttf");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
 }
 
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -35,6 +60,7 @@ code {
 .ant-menu > .ant-menu-submenu-vertical {
   width: 250px;
   color: var(--primary-color);
+  font-family: "Poppins";
 }
 
 .ant-menu > .ant-menu-item:hover,

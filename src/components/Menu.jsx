@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { Drawer, Menu } from "antd";
+import { Drawer, Menu, Row, Col } from "antd";
 import { ReactComponent as KEY_SQUARE } from "../assets/images/KEY_SQUARE.svg";
 import { ReactComponent as THREED_SQUARE } from "../assets/images/THREED_SQUARE.svg";
 import { ReactComponent as USER_SQUARE } from "../assets/images/USER_SQUARE.svg";
@@ -8,6 +8,10 @@ import { ReactComponent as DISCOUNT } from "../assets/images/DISCOUNT.svg";
 import { ReactComponent as MESSAGE } from "../assets/images/MESSAGE.svg";
 import TableInfo from "./Table";
 import { MenuOutlined } from "@ant-design/icons";
+
+const tableStyle = {
+  width: "100%",
+};
 
 function getItem(label, key, icon, children, type) {
   return {
@@ -34,7 +38,16 @@ const items = [
     "Customers",
     "sub3",
     <USER_SQUARE />,
-    [getItem(<TableInfo />, "14")],
+    [
+      getItem(
+        <Row height="69px">
+          <Col>
+            <TableInfo style={tableStyle} />
+          </Col>
+        </Row>,
+        "14"
+      ),
+    ],
     "custom_class"
   ),
 

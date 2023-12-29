@@ -31,9 +31,7 @@ const Container = () => {
       </Sider>
       <Layout>
         <Row height="69px">
-          <Col>
-            <TableInfo style={tableStyle} />
-          </Col>
+          <Col>{/* <TableInfo style={tableStyle} /> */}</Col>
         </Row>
       </Layout>
     </Layout>
