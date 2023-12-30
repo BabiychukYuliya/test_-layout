@@ -1,4 +1,4 @@
-import { Input, Table } from "antd";
+import { Input, Table, Typography } from "antd";
 
 import { useState } from "react";
 
@@ -26,6 +26,14 @@ const inactiveStyle = {
   alignItems: "center",
   padding: "4 12",
   width: 84,
+};
+
+const TextStyle = {
+  color: "#000",
+  fontFamily: "Poppins",
+  fontSize: "22px",
+  fontWeight: "600",
+  letterSpacing: "-0.22px",
 };
 
 const data = [
@@ -108,6 +116,7 @@ const TableInfo = () => {
 
   return (
     <>
+      <Typography style={TextStyle}>All Customers</Typography>
       <Input.Search
         placeholder="Search here..."
         onSearch={(value) => setSearchedText(value)}
