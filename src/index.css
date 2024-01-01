@@ -102,6 +102,10 @@ code {
   background-color: #fff;
 }
 
+.ant-layout .ant-layout-sider-children {
+  height: 1198px;
+}
+
 @media (max-width: 500px) {
   .headerMenu {
     display: none;

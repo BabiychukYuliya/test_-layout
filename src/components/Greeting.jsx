@@ -5,6 +5,8 @@ const greetingStyle = {
   fontFamily: "Poppins",
   fontSize: 24,
   fontWeight: 500,
+  marginTop: 41,
+  marginLeft: 71,
 };
 
 const Greeting = () => {
