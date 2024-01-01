@@ -78,23 +78,28 @@ code {
   width: 250px;
 }
 
-.ant-table-row {
-  .ant-table-cell {
-    padding: 0px;
-    font-family: "Poppins";
-    color: #292d32;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: -0.14px;
-  }
+.ant-table-wrapper .ant-table-tbody > tr > td {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  font-family: "Poppins";
+  color: #292d32;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.14px;
 }
 
-.ant-table-thead > tr > th {
+.ant-table-wrapper .ant-table-thead > tr > th {
   color: #b5b7c0;
   font-family: "Poppins";
   font-size: 14px;
   font-weight: 500;
   letter-spacing: -0.14px;
+}
+
+.ant-menu-submenu-popup .ant-menu-vertical .ant-menu-item {
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
 }
 
 @media (max-width: 500px) {

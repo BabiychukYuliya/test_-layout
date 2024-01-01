@@ -18,7 +18,9 @@ const PositionStyle = {
 
 const Evano = () => {
   return (
-    <div style={{ display: "flex", gap: 12 }}>
+    <div
+      style={{ display: "flex", gap: 12, position: "absolute", bottom: "76px" }}
+    >
       <Image width={42} src={evanoPath} />
       <div>
         <Typography style={EvanoStyle}>Evano</Typography>

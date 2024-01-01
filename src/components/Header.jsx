@@ -4,7 +4,7 @@ import Evano from "./Evano";
 import React from "react";
 import { Layout } from "antd";
 import Greeting from "./Greeting";
-import TableInfo from "./Table";
+// import TableInfo from "./Table";
 const { Sider } = Layout;
 
 const siderStyle = {
@@ -27,7 +27,7 @@ const Container = () => {
       </Sider>
       <Layout>
         <Greeting />
-        <TableInfo />
+        {/* <TableInfo /> */}
       </Layout>
     </Layout>
   );

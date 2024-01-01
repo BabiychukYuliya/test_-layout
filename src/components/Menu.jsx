@@ -11,7 +11,7 @@ import { MenuOutlined } from "@ant-design/icons";
 
 const tableStyle = {
   width: "100%",
-  height: "812px",
+  // height: "812px",
 };
 
 function getItem(label, key, icon, children, type) {
